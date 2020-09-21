@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Sumaq {% endblock title %}
+  
+
+{% block content %}
+
+<main class="lg:relative">
+  <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
+    <div class="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
+      <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl lg:text-5xl xl:text-6xl">
+        Comida que 
+        <br class="xl:hidden" />
+        <span class="text-red-600">vas a deleitar</span>
+      </h2>
+      <p class="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
+        Aqui en Sumaq Burger nos esforzamos en brindarte un buen servicio con todo el personal profesional que trabaja con nosotros.
+      </p>
+      <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
+        <div class="rounded-md shadow">
+          <a href="{% url 'meals:meal_list' %}" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-red transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+            Hacer una orden
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
+    <img class="absolute inset-0 w-full h-full object-cover" src="{% static 'img/home.jpg' %}" alt="burger">
+  </div>
+</main>    
+
+{% endblock content %}
+    
