@@ -46,11 +46,15 @@ def dashboard_owner(request):
     totalSales = owner_data.total_sales()
     ordersPerMonth = owner_data.orders_per_month()
     salesOfEachMonth = owner_data.sales_per_month()
-    orders = Order.objects.all()      
-    return render(request, 'dashboard/owner.html',
-                            {'orders': orders, 
-                            'totalSales': totalSales,
-                            'orders_per_month': ordersPerMonth,
-                            'meal_labels': meal_labels,
-                            'meal_quantity': meal_quantity,
-                            'salesOfEachMonth': salesOfEachMonth})
+    orders = Order.objects.all()
+    
+    context = {
+                'orders': orders,
+                'totalSales': totalSales,
+                'orders_per_month': ordersPerMonth,
+                'meal_labels': meal_labels,
+                'meal_quantity': meal_quantity,
+                'salesOfEachMonth': salesOfEachMonth
+              }
+    
+    return render(request, 'dashboard/owner.html', context)
